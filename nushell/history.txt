@@ -2131,3 +2131,36 @@ open .gitignore | /.idea /.idea \n/gh
 code alksfja . 
 cd ~/.config     
 ls 
+git add . 
+git commit -m "cleaning up dev artifacts" 
+git push origin master
+open .gitignore | <\n>
+ls 
+open gh
+sl gh |explore
+ls shellconfigs | explore
+explore help 
+explore --hlep  
+help explore 
+ls
+ls  shellconfigs | explore --peek
+cd shellconfigs 
+ls 
+open adi_bash.omp.json  
+cd .. 
+rm -r -f shellconfigs
+ls 
+alias rmdir = rm -r -f 
+mkdir shelldongis 
+rmdir shelldongis
+code lkasljklasfj $nu.config-path
+cls 
+clear 
+ls 
+cd ~ 
+ls 
+cd .config 
+ls 
+code wsksjfsdlfkj .gitignore
+Code --trace-deprecation
+Code --force-node-api-uncaught-exceptions-policy=true

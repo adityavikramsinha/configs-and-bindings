@@ -87,6 +87,7 @@ let config = {
 }
 
 alias sl = ls 
+alias rmdir = rm -r -f 
 # Used for opening the following editors from the CLI, (if installed)
 # Idea IntelliJ for Jav
 # Pycharm for Python 
