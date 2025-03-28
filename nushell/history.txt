@@ -2122,3 +2122,12 @@ touch .gitignore
 ls
 ls 
 rm -r -f .idea 
+git add . 
+git commit -m "cleaning up dev artifacts"
+git push origin master
+open .gitignore
+open .gitignore | upsert /gh
+open .gitignore | /.idea /.idea \n/gh 
+code alksfja . 
+cd ~/.config     
+ls 
