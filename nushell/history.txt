@@ -2113,3 +2113,12 @@ sys host | get hostnqme
 sys host | get hostname
 sys host 
 git add . 
+git commit -m  "pushed upstream" 
+ls 
+mk .gitignore 
+touch 
+touch --help 
+touch .gitignore
+ls
+ls 
+rm -r -f .idea 
