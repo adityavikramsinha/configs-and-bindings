@@ -2037,3 +2037,79 @@ ls
 git add . 
 git add. 
 git add  
+git add . 
+git commit -m "saving my configs for the future" 
+gh 
+ls
+ls 
+clear 
+ls 
+cls 
+gh auth login
+gh 
+gh auth login 
+git auth login 
+gh auth login 
+git --help 
+gh --help 
+git repo 
+gh repo 
+gh repo list  
+git repo help 
+gh repo help 
+gh repo --help 
+gh repo create --help
+pwd 
+gh repo create 
+git repo lsit 
+git repo list 
+gh repo list 
+gh repo --help 
+git repo view 
+gh  repo view 
+gh 
+cd ~/.config  
+gh repo view 
+git@github.com:adityavikramsinha/configs-and-bindings.git
+git remote add origin https://github.com/adityavikramsinha/configs-and-bindings.git
+git push origin master
+ssh-keygen 
+ssh-keygen -t ed25519 -C "adityavikramsinha19@gmail.com"
+git push origin master
+git remote add origin https://github.com/adityavikramsinha/configs-and-bindings.git
+git push origin master
+gh repo delete 
+gh auth refresh -h github.com -s delete_repo
+gh repo delete 
+cd ~/.config   
+pwd 
+gh repo create 
+git remote add origin https://github.com/adityavikramsinha/configs-and-bindings.git
+git push origin master
+git remove rm origin 
+git  rm origin 
+git remote rm origin
+git push origin master
+git repo 
+gh repo --help 
+gh repo list 
+git remote add origin https://github.com/adityavikramsinha/configs-and-bindings.git
+git push origin master
+gh repo list 
+git repo view 
+gh repo view 
+ls 
+mk .gitignore
+open .gitignore
+ls 
+git init 
+ls
+sl 
+cd ~/.config    
+ls 
+--help 
+help 
+sys host | get hostnqme
+sys host | get hostname
+sys host 
+git add . 
