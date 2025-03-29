@@ -90,7 +90,7 @@ alias sl = ls
 alias rmdir = rm -r -f 
 # Used for opening the following editors from the CLI, (if installed)
 # Idea IntelliJ for Jav
-# Pycharm for Python 
+# Pycharm for Python
 # RustRover for Rust
 # Android Studio for Andorid
 # VS Code for anything else. 
@@ -99,12 +99,13 @@ def code [
 lang : string # the langauge to open the editor for, langauges : java, rust, python, android
  filepath : string # where to open the editor, . for this directory
 ] { 
+
 match $lang { 
-	"java" => {  `C:\Users\Aditya\AppData\Local\JetBrains\Toolbox\scripts\idea.cmd` $filepath} 
-	"rust" => { `C:\Users\Aditya\AppData\Local\JetBrains\Toolbox\scripts\rustrover.cmd` $filepath } 
-	"python" => { `C:\Users\Aditya\AppData\Local\JetBrains\Toolbox\scripts\pycharm.cmd` $filepath} 
-	"android" => {`C:\Users\Aditya\AppData\Local\JetBrains\Toolbox\scripts\studio.cmd` $filepath}  
-	_ => {`C:\Users\Aditya\AppData\Local\Programs\Microsoft VS Code\Code.exe` $filepath} 
+	"java" => { ^$'($env.LOCALAPPDATA)/JetBrains/Toolbox/scripts/idea.cmd'  $filepath} 
+	"rust" => { ^$'($env.LOCALAPPDATA)\JetBrains\Toolbox\scripts/rustrover.cmd' $filepath } 
+	"python" => { ^$'($env.LOCALAPPDATA)/JetBrains/Toolbox/scripts/pycharm.cmd' $filepath} 
+	"android" => {^$'($env.LOCALAPPDATA)/JetBrains/Toolbox/scripts/studio.cmd' $filepath}  
+	_ => {^$'($env.LOCALAPPDATA)/Programs/Microsoft VS Code/Code.exe' $filepath} 
 } 
 } 
 
