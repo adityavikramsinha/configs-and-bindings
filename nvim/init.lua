@@ -1,6 +1,7 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-vim.opt.number =true
+vim.opt.relativenumber = true
+vim.opt.number = true
 vim.opt.mouse = a
 vim.opt.showmode = false
 vim.opt.tabstop = 4
@@ -14,6 +15,7 @@ vim.schedule(function()
     vim.opt.clipboard = 'unnamedplus'
 end)
 
+vim.o.swapfile = false
 vim.opt.undofile = true
 
 vim.opt.cursorline = true
@@ -26,7 +28,7 @@ vim.opt.confirm = true
  vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
  vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
  vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
-
+ vim.keymap.set("n", "<leader> ex", vim.cmd.Neotree)
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
 --
@@ -44,4 +46,10 @@ vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
 end)
 
+-- Dont like the ~ that vim does, instead just give space
+vim.opt.fillchars:append({ eob = " " })
 require('config.lazy')
+
+
+
+
