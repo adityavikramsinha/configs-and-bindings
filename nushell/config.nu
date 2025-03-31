@@ -2,7 +2,7 @@
 oh-my-posh init nu --config ~/.config/.poshthemes/1_shell.omp.json
 
 # Source the Oh My Posh configuration for NuShell
-source ~/.oh-my-posh.nu
+source ~/.config/nushell/.oh-my-posh.nu
 
 # Define the color theme for the terminal
 let cat_theme = {
