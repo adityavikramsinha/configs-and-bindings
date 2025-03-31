@@ -1,24 +1,33 @@
 # Fetch weather data
 let weather_stack_api_key = $env.weather_stack_api_key
-let weather_data = http get $"http://api.weatherstack.com/current?access_key=($weather_stack_api_key)&query=Kolkata"
-
-
 # get github events data
 let github_token = $env.github_terminal_view_api_token
-let events_data =  curl -s -H $"Authorization: token ($github_token)" "https://api.github.com/users/adityavikramsinha/events" | from json
+# parallelized the shit out of this bad bou
+# TODO : Try to make this a background job? since nu is supporting this now.
+let api_calls = [
+    {http get $"http://api.weatherstack.com/current?access_key=($weather_stack_api_key)&query=Kolkata"},
+    {http get --headers ["Authorization" $"token ($github_token)"] "https://api.github.com/users/adityavikramsinha/events" }
+] | par-each {|req| do $req}
 
-# commit count
-let commit_count = $events_data | where type == "PushEvent" | length
+let commit_count = $api_calls | get 1 | length
 
-# weather related pre processing
-let pm2_5 = $weather_data | get current.air_quality.pm2_5 | into int
-let temperature = $weather_data | get current.temperature
-let precip = $weather_data | get current.precip
-let temperature_glyph = if $temperature >= 30 { "☀️" } else { "🍃" }
-let air_quality_glyph = if $pm2_5 >= 50 { "🕱" } else { if $pm2_5 >= 35 { "⚠" } else { "✅" } }
+let pm2_5 = " "
+let temperature = " "
+let precip = " "
+let airquality = " "
+let temperature_glyph = "☀️"
+let air_quality_glyph = "🕱"
 
+if ($api_calls | get 0 | get success | into bool) == true {
+    let pm2_5 = $api_calls | get 0 | get current.air_quality.pm2_5 | into int
+    let temperature = $api_calls | get 0  | get current.temperature
+    let precip = $api_calls | get 0 | get current.precip
 
-# I dont like it being this close to terminal, sorry.
+    let temperature_glyph = if $temperature >= 30 { "☀️" } else { "🍃" }
+    let air_quality_glyph = if $pm2_5 >= 50 { "🕱" } else { if $pm2_5 >= 35 { "⚠" } else { "✅" } }
+}
+
+# I don't like it being this close to terminal, sorry.
 let space = "            "
 
 # get agg(up/down) network speeds, but there is no native support
