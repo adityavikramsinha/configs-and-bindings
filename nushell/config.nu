@@ -57,11 +57,7 @@ let config = {
         binary: $cat_theme.rosewater,
         cellpath: $cat_theme.sky,
         hints: $cat_theme.overlay1,
-        filesize: {|x|
-            if $x == 0b { $cat_theme.overlay0 }
-            else if $x < 1mb { $cat_theme.peach }
-            else { $cat_theme.pink }
-        },
+filesize: {|x| if $x == 0mb { $cat_theme.overlay0 } else if $x < 1mb { $cat_theme.peach } else { $cat_theme.pink }},
         shape_block: $cat_theme.blue,
         shape_bool: $cat_theme.sky,
         shape_custom: $cat_theme.yellow, # Using yellow for custom elements

@@ -28,7 +28,6 @@ vim.opt.confirm = true
  vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
  vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
  vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
- vim.keymap.set("n", "<leader> ex", vim.cmd.Neotree)
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
 --
@@ -45,6 +44,12 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
 end)
+
+
+
+-- keymaps in vim 
+vim.keymap.set('n', 'ex', ':Neotree toggle<CR>', {silent =true , desc = "Toggles the neotree file explorer"})
+vim.keymap.set("i", "kk", "<Esc>", { silent = true, noremap = true })
 
 -- Dont like the ~ that vim does, instead just give space
 vim.opt.fillchars:append({ eob = " " })

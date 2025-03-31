@@ -32,6 +32,7 @@ return {
                     tabline = 100,
                     winbar = 100,
                 }
+                
             },
             sections = {
                 -- Display only the first letter of each mode
@@ -44,12 +45,12 @@ return {
                 lualine_b = {
                     {
                         'branch',
-                        color = { gui = "bold" } -- Make branch bold
+                        color = { fg= "#cdd6f4" } -- Make branch bold
                     },
                     'diff',
                     'diagnostics'
                 },
-                lualine_c = {},
+                lualine_c = {'filename'},
                 lualine_x = {'encoding','filetype'},
                 lualine_y = {'progress'},
                 lualine_z = {'location'}
