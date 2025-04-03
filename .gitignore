@@ -2,4 +2,5 @@
 /gh
 /nushell/history.txt
 **/*.txt
+/configstore
 /nvim/lazy-lock.json

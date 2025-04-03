@@ -131,6 +131,7 @@ def code [
         "rust" => { ^$'($env.LOCALAPPDATA)\JetBrains\Toolbox\scripts/rustrover.cmd' $filepath }
         "python" => { ^$'($env.LOCALAPPDATA)/JetBrains/Toolbox/scripts/pycharm.cmd' $filepath }
         "android" => { ^$'($env.LOCALAPPDATA)/JetBrains/Toolbox/scripts/studio.cmd' $filepath }
+	"js" => {^$'($env.LOCALAPPDATA)/JetBrains/Toolbox/scripts/webstorm.cmd' $filepath }
         _ => { ^$'($env.LOCALAPPDATA)/Programs/Microsoft VS Code/Code.exe' $filepath }
     }
 }
