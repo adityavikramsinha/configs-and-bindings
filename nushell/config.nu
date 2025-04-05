@@ -111,9 +111,9 @@ if ($flag_file | path exists) {
 }
 
 # Alias commands
-alias sl = ls
 alias rmdir = rm -r -f
-
+alias ls = eza --icons --all  
+alias ll = eza --long --all --icons --header 
 # Used for opening the following editors from the CLI, (if installed)
 # Idea IntelliJ for Java
 # Pycharm for Python
